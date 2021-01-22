@@ -22,6 +22,8 @@ class CreateOrdersTable extends Migration
             $table->decimal('selling_price', 8, 2)->default(0);
             $table->bigInteger('quantity')->default(0);
 
+            $table->enum('status', ['pending', 'success', 'failed'])->default('pending')->nullable();
+
             $table->timestamps();
         });
     }

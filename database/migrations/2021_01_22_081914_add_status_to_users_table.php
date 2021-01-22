@@ -14,7 +14,6 @@ class AddStatusToUsersTable extends Migration
     public function up()
     {
         Schema::table('orders', function (Blueprint $table) {
-            $table->enum('status', ['pending', 'success', 'failed'])->default('pending')->nullable();
         });
     }
 
