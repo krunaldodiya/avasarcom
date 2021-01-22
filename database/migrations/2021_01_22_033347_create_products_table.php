@@ -16,6 +16,9 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->uuid('id')->primary();
 
+            $table->uuid('category_id');
+            $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
+
             $table->string('name');
             $table->string('image');
             $table->decimal('price', 8, 2)->default(0);
