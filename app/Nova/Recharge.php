@@ -4,7 +4,7 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
-use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Select;
@@ -55,7 +55,7 @@ class Recharge extends Resource
 
             Number::make('Amount')->sortable(),
 
-            Date::make('Recharged At', "recharged_at")->sortable(),
+            DateTime::make('Recharged At', "recharged_at")->sortable(),
 
             Select::make('Status')->options([
                 'pending' => 'pending',
