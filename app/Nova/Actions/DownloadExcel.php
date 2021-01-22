@@ -2,7 +2,6 @@
 
 namespace App\Nova\Actions;
 
-use App\Exports\RechargeExport;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
@@ -15,8 +14,6 @@ class DownloadExcel extends Action
 {
     use InteractsWithQueue, Queueable;
 
-    public $showOnTableRow = true;
-
     /**
      * Perform the action on the given models.
      *
@@ -26,7 +23,7 @@ class DownloadExcel extends Action
      */
     public function handle(ActionFields $fields, Collection $models)
     {
-        return Excel::download(new RechargeExport, 'recharges.xlsx');
+        return Action::redirect('/test/hello');
     }
 
     /**
