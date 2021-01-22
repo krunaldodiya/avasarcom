@@ -15,6 +15,8 @@ class DownloadExcel extends Action
 {
     use InteractsWithQueue, Queueable;
 
+    public $showOnTableRow = true;
+
     /**
      * Perform the action on the given models.
      *
