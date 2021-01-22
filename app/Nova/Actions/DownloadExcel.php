@@ -8,8 +8,6 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Collection;
 use Laravel\Nova\Actions\Action;
 use Laravel\Nova\Fields\ActionFields;
-use Laravel\Nova\Nova;
-use Maatwebsite\Excel\Facades\Excel;
 
 class DownloadExcel extends Action
 {
@@ -24,7 +22,7 @@ class DownloadExcel extends Action
      */
     public function handle(ActionFields $fields, Collection $models)
     {
-        $resource = Nova::resourceForKey(request()->resource);
+        $resource = request()->resource;
 
         return Action::redirect("/download/excel/$resource");
     }
