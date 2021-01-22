@@ -21,8 +21,7 @@
         "jamesh/laravel-uuid": "^1.0",
         "laravel/framework": "^8.12",
         "laravel/nova": "^3.20",
-        "laravel/tinker": "^2.5",
-        "moontoast/math": "1.1.2 as 1.999.999"
+        "laravel/tinker": "^2.5"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
