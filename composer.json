@@ -7,6 +7,12 @@
         "laravel"
     ],
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://nova.laravel.com"
+        }
+    ],
     "require": {
         "php": "^7.3|^8.0",
         "fideloper/proxy": "^4.4",
@@ -14,6 +20,7 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "jamesh/laravel-uuid": "^1.0",
         "laravel/framework": "^8.12",
+        "laravel/nova": "^3.20",
         "laravel/tinker": "^2.5"
     },
     "require-dev": {
