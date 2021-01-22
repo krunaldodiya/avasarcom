@@ -23,6 +23,8 @@ class Operator extends Resource
      */
     public static $title = 'id';
 
+    public static $group = 'Recharge';
+
     /**
      * The columns that should be searched.
      *

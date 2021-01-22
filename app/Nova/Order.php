@@ -25,6 +25,8 @@ class Order extends Resource
      */
     public static $title = 'id';
 
+    public static $group = 'Product';
+
     /**
      * The columns that should be searched.
      *
