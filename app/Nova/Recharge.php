@@ -3,28 +3,24 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Number;
-use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Product extends Resource
+class Recharge extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Product::class;
+    public static $model = \App\Models\Recharge::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -45,16 +41,6 @@ class Product extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-
-            Text::make('Name'),
-
-            Image::make('Image'),
-
-            Number::make('Price'),
-
-            Number::make('Quantity'),
-
-            HasMany::make('Orders', 'orders', Order::class),
         ];
     }
 

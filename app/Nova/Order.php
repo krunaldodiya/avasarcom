@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Order extends Resource
@@ -49,6 +50,12 @@ class Order extends Resource
             Number::make('Selling Price'),
 
             Number::make('Quantity'),
+
+            Select::make('Status')->options([
+                'pending' => 'pending',
+                'success' => 'success',
+                'failed' => 'failed',
+            ]),
         ];
     }
 
