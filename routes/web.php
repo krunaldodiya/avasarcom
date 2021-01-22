@@ -1,6 +1,8 @@
 <?php
 
+use App\Exports\RechargeExport;
 use Illuminate\Support\Facades\Route;
+use Maatwebsite\Excel\Facades\Excel;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/test', function () {
+    return Excel::download(new RechargeExport, 'recharges.xlsx');
 });
