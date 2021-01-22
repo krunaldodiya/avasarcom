@@ -53,7 +53,7 @@ class Recharge extends Resource
 
             Number::make('Amount')->sortable(),
 
-            Date::make('Recharged On', "date")
+            Date::make('Recharged At', "recharged_at")
                 ->resolveUsing(function ($date) {
                     return $date->format('d/m/Y h:m A');
                 })

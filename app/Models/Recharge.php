@@ -12,7 +12,9 @@ class Recharge extends Model
 
     protected $guarded = [];
 
-    protected $dates = ['created_at', 'updated_at'];
+    protected $dates = [
+        'created_at', 'updated_at', 'recharged_at'
+    ];
 
     public function operator()
     {

@@ -23,7 +23,7 @@ class CreateRechargesTable extends Migration
 
             $table->decimal('amount', 8, 2)->default(0);
 
-            $table->timestamp('date');
+            $table->timestamp('recharged_at');
 
             $table->enum('status', ['pending', 'success', 'failed'])->default('pending')->nullable();
 
