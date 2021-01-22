@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Jamesh\Uuid\HasUuid;
 
-class Product extends Model
+class Category extends Model
 {
     use HasFactory, HasUuid;
 
@@ -14,13 +14,8 @@ class Product extends Model
 
     protected $dates = ['created_at', 'updated_at'];
 
-    public function orders()
+    public function products()
     {
-        return  $this->hasMany(Order::class);
-    }
-
-    public function category()
-    {
-        return  $this->belongsTo(Category::class);
+        return  $this->hasMany(Product::class);
     }
 }
