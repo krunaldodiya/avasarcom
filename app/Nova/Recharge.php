@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Actions\DownloadExcel;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\DateTime;
@@ -106,6 +107,6 @@ class Recharge extends Resource
      */
     public function actions(Request $request)
     {
-        return [];
+        return [new DownloadExcel];
     }
 }
