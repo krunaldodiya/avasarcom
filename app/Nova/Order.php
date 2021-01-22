@@ -44,7 +44,7 @@ class Order extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
-            BelongsTo::make('Product', Product::class),
+            BelongsTo::make('Product', 'product', Product::class),
 
             Number::make('Selling Price'),
 
