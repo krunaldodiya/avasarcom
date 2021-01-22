@@ -22,5 +22,7 @@ Route::get('/', function () {
 Route::get('/download/excel/{name}', function () {
     $resource = request()->segment(3);
 
-    return Excel::download(new RechargeExport, "{$resource}.xlsx");
+    $exportable = config("exports.{$resource}");
+
+    return Excel::download($exportable, "{$resource}.xlsx");
 });
