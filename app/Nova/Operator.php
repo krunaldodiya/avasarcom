@@ -21,7 +21,7 @@ class Operator extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
 
     public static $group = 'Recharge';
 
