@@ -19,6 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', function () {
-    return Excel::download(new RechargeExport, 'recharges.xlsx');
+Route::get('/download/excel/{name}', function () {
+    $resource = request()->segment(3);
+
+    return Excel::download(new RechargeExport, "{$resource}.xlsx");
 });
