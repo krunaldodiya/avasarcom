@@ -3,7 +3,12 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Select;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Recharge extends Resource
@@ -41,6 +46,24 @@ class Recharge extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
+
+            BelongsTo::make("Operator", "operator", Operator::class),
+
+            Text::make('Mobile')->sortable(),
+
+            Number::make('Amount')->sortable(),
+
+            Date::make('Recharged On', "date")
+                ->resolveUsing(function ($date) {
+                    return $date->format('d/m/Y h:m A');
+                })
+                ->sortable(),
+
+            Select::make('Status')->options([
+                'pending' => 'pending',
+                'success' => 'success',
+                'failed' => 'failed',
+            ]),
         ];
     }
 

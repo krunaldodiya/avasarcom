@@ -13,4 +13,9 @@ class Recharge extends Model
     protected $guarded = [];
 
     protected $dates = ['created_at', 'updated_at'];
+
+    public function operator()
+    {
+        return $this->belongsTo(Operator::class);
+    }
 }
