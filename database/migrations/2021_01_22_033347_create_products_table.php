@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->string('image');
             $table->decimal('price', 8, 2)->default(0);
-            $table->integer('quantity')->default(0);
+            $table->bigInteger('quantity')->default(0);
 
             $table->timestamps();
         });

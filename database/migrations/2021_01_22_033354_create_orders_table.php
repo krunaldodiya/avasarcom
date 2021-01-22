@@ -20,7 +20,7 @@ class CreateOrdersTable extends Migration
             $table->foreign('product_id')->references('id')->on('products')->onUpdate('cascade')->onDelete('cascade');
 
             $table->decimal('selling_price', 8, 2)->default(0);
-            $table->integer('quantity')->default(0);
+            $table->bigInteger('quantity')->default(0);
 
             $table->timestamps();
         });
