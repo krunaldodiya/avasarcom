@@ -13,4 +13,9 @@ class Product extends Model
     protected $guarded = [];
 
     protected $dates = ['created_at', 'updated_at'];
+
+    public function orders()
+    {
+        return  $this->hasMany(Order::class);
+    }
 }
