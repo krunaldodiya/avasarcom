@@ -13,14 +13,16 @@ class RechargeExport implements FromCollection, WithHeadings, WithMapping
 {
     public function headings(): array
     {
-        return ['operator', 'mobile', 'amount', 'recharged_at', 'status'];
+        return ['type', 'operator', 'mobile', 'customer_id', 'amount', 'recharged_at', 'status'];
     }
 
     public function map($recharge): array
     {
         return [
+            $recharge->type,
             Operator::find($recharge->operator_id)->name,
             $recharge->mobile,
+            $recharge->customer_id,
             $recharge->amount,
             Carbon::parse($recharge->recharged_at)->format("d/m/Y h:i A"),
             $recharge->status
