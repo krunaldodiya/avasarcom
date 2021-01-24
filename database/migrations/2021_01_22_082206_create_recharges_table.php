@@ -19,13 +19,17 @@ class CreateRechargesTable extends Migration
             $table->uuid('operator_id');
             $table->foreign('operator_id')->references('id')->on('operators')->onUpdate('cascade')->onDelete('cascade');
 
-            $table->string('mobile');
+            $table->string('mobile')->nullable();
+
+            $table->string('customer_id')->nullable();
 
             $table->decimal('amount', 8, 2)->default(0);
 
             $table->timestamp('recharged_at');
 
             $table->enum('status', ['pending', 'success', 'failed'])->default('pending')->nullable();
+
+            $table->enum('type', ['mobile', 'dth'])->default('mobile');
 
             $table->timestamps();
         });

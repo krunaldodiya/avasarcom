@@ -50,9 +50,16 @@ class Recharge extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
+            Select::make('Type')->options([
+                'mobile' => 'mobile',
+                'dth' => 'dth',
+            ]),
+
             BelongsTo::make("Operator", "operator", Operator::class),
 
             Text::make('Mobile')->sortable(),
+
+            Text::make('Customer Id')->sortable(),
 
             Number::make('Amount')->sortable(),
 
